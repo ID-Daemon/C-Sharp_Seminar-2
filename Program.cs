@@ -70,24 +70,38 @@
 
 
 //Переменные для ДЗ
-int number, number2;
+int number;
 
 // Домашнее задание
-Console.WriteLine();Console.WriteLine();
-Console.WriteLine("Задача №10.");
-Console.WriteLine();
 
-Console.Write("Введите трехзначное число: ");
-number = int.Parse(Console.ReadLine()!);
-while (number < 100 || number > 999){
-    Console.Write("Вы ввели НЕ трехзначное число. Пожалуйста, введите корректное число: ");
-    number = int.Parse(Console.ReadLine()!); 
-}
+// Console.WriteLine();Console.WriteLine();
+// Console.WriteLine("Задача №10.");
+// Console.WriteLine();
 
-number2 = (number / 10) % 10;
-Console.WriteLine($"Втрорая цифра введенного числа {number} - {number2}");
+// Console.Write("Введите трехзначное число: ");
+// number = int.Parse(Console.ReadLine()!);
+// while (number < 100 || number > 999){
+//     Console.Write("Вы ввели НЕ трехзначное число. Пожалуйста, введите корректное число: ");
+//     number = int.Parse(Console.ReadLine()!); 
+// }
+
+// number2 = (number / 10) % 10;
+// Console.WriteLine($"Втрорая цифра введенного числа {number} - {number2}");
 
 Console.WriteLine();Console.WriteLine();
 Console.WriteLine("Задача №13.");
 Console.WriteLine();
 
+// По идее я написал обработку числа до трехзначного, поэтому ограничение числа до 100.000 не актуально.
+// do {
+    Console.Write("Введите число: ");
+    number = int.Parse(Console.ReadLine()!);
+// } while (number > 100000);
+
+while (number > 999) {
+    if (number < 100) break;
+    number = number / 10;
+} 
+
+if (number < 100) Console.WriteLine("Третьей фифры нет");
+else Console.WriteLine("->" + number % 10);
