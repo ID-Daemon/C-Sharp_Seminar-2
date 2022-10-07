@@ -88,20 +88,31 @@ int number;
 // number2 = (number / 10) % 10;
 // Console.WriteLine($"Втрорая цифра введенного числа {number} - {number2}");
 
+// Console.WriteLine();Console.WriteLine();
+// Console.WriteLine("Задача №13.");
+// Console.WriteLine();
+
+// // По идее я написал обработку числа до трехзначного, поэтому ограничение числа до 100.000 не актуально.
+// // do {
+//     Console.Write("Введите число: ");
+//     number = int.Parse(Console.ReadLine()!);
+// // } while (number > 100000);
+
+// while (number > 999) {
+//     if (number < 100) break;
+//     number = number / 10;
+// } 
+
+// if (number < 100) Console.WriteLine("Третьей фифры нет");
+// else Console.WriteLine("->" + number % 10);
+
 Console.WriteLine();Console.WriteLine();
-Console.WriteLine("Задача №13.");
+Console.WriteLine("Задача №15.");
 Console.WriteLine();
 
-// По идее я написал обработку числа до трехзначного, поэтому ограничение числа до 100.000 не актуально.
-// do {
-    Console.Write("Введите число: ");
-    number = int.Parse(Console.ReadLine()!);
-// } while (number > 100000);
+Console.Write("Введите номер дня недели: ");
+number = int.Parse(Console.ReadLine()!);
 
-while (number > 999) {
-    if (number < 100) break;
-    number = number / 10;
-} 
-
-if (number < 100) Console.WriteLine("Третьей фифры нет");
-else Console.WriteLine("->" + number % 10);
+if (number < 1 || 7 < number) Console.WriteLine("Нет такого номера недели");
+else if (number == 6 || number == 7) Console.WriteLine("Вы ввели номер выходного дня недели");
+else Console.WriteLine("Это не выходной");
